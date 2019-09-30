@@ -11,9 +11,8 @@ def test():
     Class1.Lesson.__enter__(pr1)
     Class1.Lesson.__enter__(pr3)
     print("-------------------------")
-    print(Class1.Journal.__str__(pr1))
-    print(Class1.Journal.__str__(pr3),"\n")
-    print(Class1.Journal.__repr__(pr4))
-    print(Class1.Journal.__repr__(pr5),"\n")
+    prch = Class1.Journal("university", "faculty", "years", "group", "name_subject", "time", "teacher", "pages", "number", "surname", "name", "middle_name")
+    print(Class1.Journal.__str__(prch), "\n")
+    print(Class1.Journal.__repr__(prch))
 if __name__ == '__main__':
     test()

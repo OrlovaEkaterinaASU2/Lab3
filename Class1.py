@@ -6,7 +6,7 @@ class Titul:
         self.group = group
 
     def __enter__(self):
-        print("{!r}\n{!r}\n{!r}\n{!r} \n \n ".format(self.university, self.faculty, self.years, self.group))
+        print("{}\n{}\n{}\n{} \n \n ".format(self.university, self.faculty, self.years, self.group))
 
 class Students:
     def __init__(self, number, surname, name, middle_name):
@@ -16,7 +16,7 @@ class Students:
         self.middle_name = middle_name
 
     def __enter__(self):
-        print("{!r}\n{!r}\n{!r}\n{!r} \n \n ".format(self.number, self.surname, self.name, self.middle_name))
+        print("{} {} {} {}".format(self.number, self.surname, self.name, self.middle_name))
 
 class Lesson:
     def __init__(self, name_subject, time, teacher, pages):
@@ -26,7 +26,7 @@ class Lesson:
         self.pages = pages
 
     def __enter__(self):
-        print("{!r}\n{!r}\n{!r}\n{!r} \n \n ".format(self.name_subject, self.time, self.teacher, self.pages))
+        print("{} {} {} {}".format(self.name_subject, self.time, self.teacher, self.pages))
 
 class Journal(Lesson, Titul,Students):
     def __init__(self, university, faculty, years, group, name_subject, time, teacher, pages, number, surname, name, middle_name):
@@ -35,7 +35,7 @@ class Journal(Lesson, Titul,Students):
         Students.__init__(self, number, surname, name, middle_name)
 
     def __repr__(self):
-        return "{} {} {} {}".format(self.number, self.surname, self.name, self.middle_name)
+        return 'Journal({!r},{!r},{!r},{!r},{!r},{!r},{!r},{!r},{!r},{!r},{!r},{!r})'.format(self.university, self.faculty, self.years, self.group, self.name_subject, self.time, self.teacher, self.pages, self.number, self.surname, self.name, self.middle_name)
 
     def __str__(self):
-        return "{} {} {} {}".format( self.name_subject, self.time, self.teacher, self.pages)
+        return "{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}.".format(self.university, self.faculty, self.years, self.group, self.name_subject, self.time, self.teacher, self.pages, self.number, self.surname, self.name, self.middle_name)
